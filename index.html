@@ -28,14 +28,12 @@
 
   <body>
     <header>
+      <a href="#top"><img src="img/logo.png" alt="wwake logo" /></a>
       <nav>
         <ul>
-          <li>
-            <a href="#top"><img src="img/logo.png" alt="wwake logo" /></a>
-          </li>
           <li><a href="#nosotros">nosotros</a></li>
-          <li><a href="#nosotros">proyectos</a></li>
-          <li><a href="#nosotros">contacto</a></li>
+          <li><a href="#proyectos">proyectos</a></li>
+          <li><a href="#contacto">contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -57,7 +55,7 @@
         </div>
         <div id="valores--container">
           <div class="valores">
-            <div class="valores--icon"></div>
+            <img src="/img/icon-innovacion.svg" alt="" class="valores--icon" />
             <h3>Innovación</h3>
             <p>
               Buscamos desarrollar espacios sostenibles, innovadores y centrados
@@ -65,7 +63,7 @@
             </p>
           </div>
           <div class="valores">
-            <div class="valores--icon"></div>
+            <img src="/img/icon-compromiso.svg" alt="" class="valores--icon" />
             <h3>Compromiso</h3>
             <p>
               Promovemos la transparencia en todos los procesos, y nos basamos
@@ -74,7 +72,7 @@
             </p>
           </div>
           <div class="valores">
-            <div class="valores--icon"></div>
+            <img src="/img/icon-calidad.svg" alt="" class="valores--icon" />
             <h3>Calidad</h3>
             <p>
               Aseguramos la calidad en todas las etapas del desarrollo, y
@@ -82,7 +80,7 @@
             </p>
           </div>
           <div class="valores">
-            <div class="valores--icon"></div>
+            <img src="/img/icon-equipo.svg" alt="" class="valores--icon" />
             <h3>Trabajo en equipo</h3>
             <p>
               Trabajamos con unidad con todos nuestros socios y proveedores.
@@ -106,24 +104,58 @@
       </div>
       <div id="contacto">
         <h2>Dejanos un mensaje</h2>
+        <form action="https://formspree.io/f/xbllpegd" method="POST">
+          <p>
+            <input
+              required
+              placeholder="Nombre"
+              type="text"
+              id="name"
+              name="name"
+              minlength="5" />
+          </p>
+          <p>
+            <input
+              required
+              placeholder="Correo electrónico"
+              type="email"
+              id="email"
+              name="email"
+              pattern="^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$"
+              title="Por favor, introduce un correo válido. Ejemplo: usuario@dominio.com" />
+          </p>
+          <p>
+            <textarea
+              required
+              placeholder="Mensaje"
+              id="message"
+              name="message"
+              minlength="10"></textarea>
+          </p>
+          <p>
+            <button type="submit">Enviar</button>
+          </p>
+        </form>
       </div>
     </main>
 
     <footer>
-      <div>
-        <div>Rep. Árabe Siria 3239, Buenos Aires</div>
-        <div>+54 9 11 40739985</div>
-      </div>
-      <div>
-        <div>wwakegroup@gmail.com</div>
-        <div>LOGO INSTAGRAM wwakegroup</div>
-      </div>
-      <div>
-        <div>© 2024 — WWAKE GROUP</div>
-        <div>Diseño y desarrollo web: Maniowicz</div>
+      <div class="footer-info">
+        <div>
+          <div>Rep. Árabe Siria 3239, Buenos Aires</div>
+          <div>+54 9 11 40739985</div>
+        </div>
+        <div>
+          <div>wwakegroup@gmail.com</div>
+          <div>LOGO INSTAGRAM wwakegroup</div>
+        </div>
+        <div id="creditos">
+          <div>© 2024 — WWAKE GROUP</div>
+          <div>Diseño y desarrollo web: Maniowicz</div>
+        </div>
       </div>
     </footer>
 
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
