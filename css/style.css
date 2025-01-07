@@ -89,6 +89,7 @@ textarea {
   --blanco: white;
   --negro: black;
   --grisoscuro: #44504f;
+  --grisclaro: #c0c9c3;
   --verde: #687968;
   --verdeclaro: #93a18d;
   --custom-border: 2px solid var(--azul);
@@ -113,9 +114,25 @@ body {
   font-style: normal;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 p {
   font-size: 16px;
   font-weight: var(--medium);
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: var(--semibold);
 }
 
 h3 {
@@ -127,11 +144,57 @@ h3 {
 
 header {
   background-color: transparent;
+  position: fixed;
   font-weight: var(--semibold);
   font-size: 11px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: background-color 0.4s ease;
+  z-index: 7;
+}
+
+@media only screen and (min-width: 992px) {
+  header {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+}
+
+.scrolled header {
+  background-color: var(--grisoscuro);
+  box-shadow: 0px 2px 15px rgb(0 0 0 / 25%);
+}
+
+header img {
+  height: 56px;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+header nav ul li {
+  padding-left: 24px;
+  text-transform: uppercase;
 }
 
 /* ------------ HERO ------------ */
+
+#hero {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/img/hero-river.jpg) top / cover; */
+  /* background-size: cover; */
+  height: 100vh;
+  width: 100%;
+}
 /* ------------ NOSOTROS ------------ */
 
 #nosotros--desc {
@@ -174,6 +237,10 @@ header {
   background-color: var(--verde);
   color: var(--blanco);
   text-align: center;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -181,34 +248,158 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--padding);
-    padding: 80px 40px;
   }
 }
+
+.valores--icon {
+  padding-bottom: 16px;
+}
+
+.valores h3 {
+  padding-bottom: 12px;
+}
+
 /* ------------ PROYECTOS ------------ */
 
 #proyectos {
   padding: 80px var(--padding);
+  display: grid;
+  gap: var(--padding);
 }
 
 @media only screen and (min-width: 992px) {
   #proyectos {
     padding: 120px var(--padding);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .card {
   background-color: var(--grisoscuro);
+  padding: 16px 16px 32px;
 }
+
+.card--foto {
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 1/1;
+}
+
+.card h3 {
+  padding-top: 16px;
+}
+
+.card:nth-child(1) .card--foto {
+  background-image: url(/img/card-riverpark.png);
+}
+
+.card:nth-child(2) .card--foto {
+  background-image: url(/img/card-trump.png);
+}
+
+.card:nth-child(3) .card--foto {
+  background-image: url(/img/card-botanica.png);
+}
+
 /* ------------ CONTACTO ------------ */
 
 #contacto {
   background-color: var(--verdeclaro);
+  padding: 80px var(--padding);
+}
+
+form {
+  padding-top: var(--padding);
+}
+
+form p + p {
+  padding-top: 16px;
+}
+
+input,
+textarea,
+button {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: var(--medium);
+}
+
+input,
+textarea {
+  width: 100%;
+  background-color: var(--grisclaro);
+  color: var(--negro);
+  padding: 16px;
+  border: none;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 992px) {
+  input,
+  textarea {
+    width: calc(50% - 40px);
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--grisoscuro);
+}
+
+input:focus,
+textarea:focus {
+  outline: solid 1.5px var(--grisoscuro);
+}
+
+textarea {
+  height: 10em;
+}
+
+/* input:user-valid {
+  outline-color: darkgreen;
+}
+
+input:user-invalid {
+  outline-color: crimson;
+}
+  */
+
+button {
+  color: var(--blanco);
+  background-color: var(--grisoscuro);
+  padding: 10px 24px;
+  border: none;
 }
 
 /* ------------ FOOTER ------------ */
 
 footer {
   background-color: var(--verdeclaro);
+  padding: 0px var(--padding);
+}
+.footer-info {
+  padding: var(--padding) 0;
+  border-top: 1px solid var(--blanco);
+}
+
+#creditos {
+  grid-area: creditos;
+  padding-top: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+  .footer-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--padding);
+    grid-template-areas: "creditos a b";
+  }
+
+  #creditos {
+    padding-top: 0px;
+  }
 }
 
 /* ==========================================================================
