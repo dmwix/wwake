@@ -59,8 +59,8 @@ function slider() {
   // Apply background images from data-bg attribute
   slides.forEach((slide) => {
     const bgImage = slide.getAttribute("data-bg");
-    slide.style.background = `url(${bgImage})`;
     // slide.style.backgroundImage = `url(${bgImage})`;
+    slide.style.background = `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url(${bgImage}) center / cover`;
   });
 
   // Create bullets
