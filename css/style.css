@@ -119,6 +119,7 @@ a {
   text-decoration: none;
 }
 
+h1,
 h2,
 h3,
 p {
@@ -145,8 +146,6 @@ h3 {
 header {
   background-color: transparent;
   position: fixed;
-  font-weight: var(--semibold);
-  font-size: 11px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -157,20 +156,8 @@ header {
   z-index: 7;
 }
 
-@media only screen and (min-width: 992px) {
-  header {
-    padding: 20px 40px;
-    font-size: 16px;
-  }
-}
-
-.scrolled header {
-  background-color: var(--grisoscuro);
-  box-shadow: 0px 2px 15px rgb(0 0 0 / 25%);
-}
-
 header img {
-  height: 56px;
+  height: 40px;
 }
 
 header nav ul {
@@ -182,8 +169,33 @@ header nav ul {
 }
 
 header nav ul li {
-  padding-left: 24px;
+  padding-left: 16px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  font-weight: var(--semibold);
+}
+
+.scrolled header {
+  background-color: var(--grisoscuro);
+  box-shadow: 0px 2px 15px rgb(0 0 0 / 25%);
+}
+
+@media only screen and (min-width: 992px) {
+  header {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+
+  header img {
+    height: 56px;
+  }
+
+  header nav ul li {
+    padding-left: 32px;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
 }
 
 /* ------------ HERO ------------ */
@@ -212,8 +224,6 @@ header nav ul li {
   height: 100%;
   top: 0;
   left: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
   z-index: 1;
@@ -224,12 +234,17 @@ header nav ul li {
   z-index: 2;
 }
 
-h1 {
+.slider h1 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
 }
 
 .bullets {
@@ -243,15 +258,16 @@ h1 {
 }
 
 .bullets button {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: 0px;
   background: rgb(255 255 255 / 50%);
   cursor: pointer;
   outline: none;
-  transition: background 0.3s ease; /* Optional smooth transition */
+  transition: background 1s ease;
   padding: 0;
+  box-shadow: 2px 2px 16px rgb(0 0 0 / 75%);
 }
 
 .bullets button.active {
@@ -263,22 +279,38 @@ button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: transparent;
+  color: var(--blanco);
   border: none;
   width: 40px;
   height: 40px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 28px;
   z-index: 4;
 }
 
 button.prev {
-  left: 10px;
+  left: 20px;
+  text-align: left;
 }
 
 button.next {
-  right: 10px;
+  right: 20px;
+  text-align: right;
+}
+
+@media only screen and (min-width: 992px) {
+  .slider h1 {
+    font-size: 40px;
+  }
+
+  button.prev {
+    left: 40px;
+  }
+
+  button.next {
+    right: 40px;
+  }
 }
 
 /* ------------ NOSOTROS ------------ */
