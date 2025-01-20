@@ -98,14 +98,17 @@ textarea {
   --custom-radius: 24px;
   --medium: 500;
   --semibold: 600;
-  --padding: 40px;
+  --custom-gap: 40px;
+  --custom-padding: 80px 40px;
 }
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 body {
+  overscroll-behavior: none;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -134,8 +137,14 @@ p {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: var(--semibold);
+}
+
+@media only screen and (min-width: 992px) {
+  h2 {
+    font-size: 32px;
+  }
 }
 
 h3 {
@@ -317,6 +326,13 @@ button.next {
   cursor: pointer;
   font-size: 28px;
   z-index: 4;
+  padding: 0;
+}
+
+button.prev:hover,
+button.next:hover {
+  color: inherit;
+  background-color: inherit;
 }
 
 button.prev {
@@ -352,23 +368,27 @@ button.next {
   padding: 80px 40px;
 }
 
+#nosotros--desc p {
+  font-size: 18px;
+}
+
 @media only screen and (min-width: 992px) {
   #nosotros--grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "foto desc";
-    gap: var(--padding);
-    padding: var(--padding);
+    gap: var(--custom-gap);
+    padding: var(--custom-gap);
     align-items: center;
   }
 
   #nosotros--desc {
-    padding: 0;
+    padding: 0 40px;
   }
-}
 
-#nosotros--desc p {
-  font-size: 20px;
+  #nosotros--desc p {
+    font-size: 20px;
+  }
 }
 
 #nosotros--foto {
@@ -384,18 +404,18 @@ button.next {
 #valores--container {
   background-color: var(--verde);
   color: var(--blanco);
-  text-align: center;
   padding: 80px 40px;
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 64px;
+  text-align: center;
 }
 
 @media only screen and (min-width: 992px) {
   #valores--container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--padding);
+    gap: var(--custom-gap);
   }
 }
 
@@ -404,7 +424,7 @@ button.next {
 }
 
 .valores h3 {
-  padding-bottom: 12px;
+  padding-bottom: 8px;
 }
 
 /* ------------ PROYECTOS ------------ */
@@ -414,14 +434,14 @@ button.next {
 }
 
 #proyectos {
-  padding: 80px var(--padding);
+  padding: var(--custom-padding);
   display: grid;
-  gap: var(--padding);
+  gap: var(--custom-gap);
 }
 
 @media only screen and (min-width: 992px) {
   #proyectos {
-    padding: 120px var(--padding);
+    padding: 120px var(--custom-gap);
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -429,12 +449,14 @@ button.next {
 .card {
   background-color: var(--grisoscuro);
   padding: 16px 16px 32px;
+  transition: background-color 0.3s ease-in;
 }
 
 .card--foto {
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
   aspect-ratio: 1/1;
+  transition: background-size 0.5s ease-in-out; /* Smooth transition */
 }
 
 .card h3 {
@@ -442,7 +464,7 @@ button.next {
 }
 
 .card:nth-child(1) .card--foto {
-  background-image: url(/img/card-riverpark.png);
+  background-image: url(/img/card-riverpark1.png);
 }
 
 .card:nth-child(2) .card--foto {
@@ -453,15 +475,25 @@ button.next {
   background-image: url(/img/card-botanica.png);
 }
 
+@media (hover: hover) {
+  .card:hover {
+    background-color: var(--petroleo);
+  }
+
+  .card:hover .card--foto {
+    background-size: 105%; /* Enlarged background size on hover */
+  }
+}
+
 /* ------------ CONTACTO ------------ */
 
 #contacto {
   background-color: var(--verdeclaro);
-  padding: 80px var(--padding);
+  padding: var(--custom-padding);
 }
 
 form {
-  padding-top: var(--padding);
+  padding-top: var(--custom-gap);
 }
 
 form p + p {
@@ -528,8 +560,8 @@ button {
 
 @media (hover: hover) {
   button:hover {
-    color: var(--grisoscuro);
-    background-color: var(--grisclaro);
+    color: var(--blanco);
+    background-color: var(--petroleo);
   }
 }
 
@@ -537,10 +569,10 @@ button {
 
 footer {
   background-color: var(--verdeclaro);
-  padding: 0px var(--padding);
+  padding: 0px var(--custom-gap);
 }
 .footer-info {
-  padding: var(--padding) 0;
+  padding: var(--custom-gap) 0;
   border-top: 1px solid var(--blanco);
 }
 
@@ -553,7 +585,7 @@ footer {
   .footer-info {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--padding);
+    gap: var(--custom-gap);
     grid-template-areas: "creditos a b";
   }
 
@@ -563,43 +595,42 @@ footer {
 }
 
 /* ------------ PAGINAS PROYECTOS ------------ */
+/* ------------ HERO PROYECTOS ------------ */
 
 .hero--proyectos {
+  width: 100%;
+  color: var(--negro);
   display: grid;
   align-items: center;
   justify-items: center;
-  height: 100vh;
-  width: 100%;
-  color: var(--negro);
 }
 
-@media only screen and (min-width: 992px) {
-  .hero--proyectos {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-  }
+.caratula {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--custom-padding);
 }
 
 #riverpark .logo--proyecto {
-  width: 100%;
-  height: 80px;
+  width: 50%;
+  height: 56px;
   background-image: url(/img/riverpark-logo.png);
   background-position: center;
   background-size: cover;
 }
 
-.caratula {
-  width: 50%;
-  text-align: center;
-  grid-column: 2/3;
-  grid-row: 1;
+.caratula h1 {
+  font-size: 36px;
+}
+
+.caratula p {
+  font-size: 20px;
 }
 
 .caratula--foto {
-  grid-row: 1;
-  grid-column: 1/2;
   background-size: cover;
-  height: 100vh;
   width: 100%;
 }
 
@@ -607,11 +638,34 @@ footer {
   background-image: url(/img/riverpark--caratula.jpg);
 }
 
+@media only screen and (min-width: 992px) {
+  .hero--proyectos {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+  }
+
+  .caratula {
+    grid-column: 2/3;
+    width: 50%;
+    padding: 0;
+  }
+
+  .caratula--foto {
+    grid-column: 1/2;
+  }
+
+  .caratula p {
+    width: 80%;
+  }
+}
+
+/* ------------ UBICACION PROYECTOS ------------ */
+
 .ubicacion--proyectos {
-  padding: 80px var(--padding);
+  padding: var(--custom-padding);
   background-color: var(--petroleo);
   display: grid;
-  gap: var(--padding);
+  gap: var(--custom-gap);
 }
 
 .ubicacion--mapa {
@@ -636,12 +690,14 @@ footer {
   padding-bottom: 24px;
 }
 
+/* ------------ AMENITIES PROYECTOS ------------ */
+
 .amenities {
-  padding: 80px var(--padding);
+  padding: var(--custom-padding);
   color: var(--negro);
   font-size: 20px;
   display: grid;
-  gap: var(--padding);
+  gap: var(--custom-gap);
 }
 
 .amenities--listado ul {
@@ -735,11 +791,13 @@ footer {
   background-image: url(/img/separador-riverpark.jpg);
 }
 
+/* ------------ DETALLE PROYECTOS ------------ */
+
 .proyectos--detalle {
   background: var(--verde);
-  padding: 80px var(--padding) 40px var(--padding);
+  padding: 80px 40px 40px 40px;
   display: grid;
-  gap: var(--padding);
+  gap: var(--custom-gap);
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
 }
