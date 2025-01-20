@@ -137,7 +137,7 @@ p {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 26 px;
   font-weight: var(--semibold);
 }
 
@@ -463,15 +463,15 @@ button.next {
   padding-top: 16px;
 }
 
-.card:nth-child(1) .card--foto {
+#proyectos a:nth-child(1) .card--foto {
   background-image: url(/img/card-riverpark1.png);
 }
 
-.card:nth-child(2) .card--foto {
+#proyectos a:nth-child(2) .card--foto {
   background-image: url(/img/card-trump.png);
 }
 
-.card:nth-child(3) .card--foto {
+#proyectos a:nth-child(3) .card--foto {
   background-image: url(/img/card-botanica.png);
 }
 
@@ -594,6 +594,10 @@ footer {
   }
 }
 
+#instagram {
+  padding-right: 4px;
+}
+
 /* ------------ PAGINAS PROYECTOS ------------ */
 /* ------------ HERO PROYECTOS ------------ */
 
@@ -638,6 +642,11 @@ footer {
   background-image: url(/img/riverpark--caratula.jpg);
 }
 
+#trump .caratula--foto {
+  background-image: url(/img/Trump1.jpeg);
+  background-position: center;
+}
+
 @media only screen and (min-width: 992px) {
   .hero--proyectos {
     grid-template-columns: 1fr 1fr;
@@ -679,6 +688,10 @@ footer {
 
   .ubicacion--mapa {
     aspect-ratio: auto;
+  }
+
+  #trump .ubicacion--mapa {
+    aspect-ratio: 2/1;
   }
 }
 
@@ -738,6 +751,16 @@ footer {
   .amenities--listado {
     grid-column: 9/13;
   }
+
+  /* #trump .amenities--texto {
+    grid-column: 8/13;
+    grid-row: 2;
+  }
+
+  #trump .amenities--listado {
+    grid-column: 1/8;
+    grid-row: 2;
+  } */
 }
 
 @media only screen and (max-width: 992px) {
@@ -765,6 +788,18 @@ footer {
   background-image: url(/img/riverpark-amenities-3.jpg);
 }
 
+#trump .amenities .amenities--foto:nth-child(1) {
+  background-image: url(/img/trump-amenities1.jpg);
+}
+
+#trump .amenities .amenities--foto:nth-child(2) {
+  background-image: url(/img/trump-amenities2.jpg);
+}
+
+#trump .amenities .amenities--foto:nth-child(3) {
+  background-image: url(/img/trump-amenities3.jpg);
+}
+
 .amenities ul {
   box-sizing: border-box;
   margin: 0;
@@ -789,6 +824,10 @@ footer {
 
 #riverpark .separador {
   background-image: url(/img/separador-riverpark.jpg);
+}
+
+#trump .separador {
+  background-image: url(/img/hero-trump.jpg);
 }
 
 /* ------------ DETALLE PROYECTOS ------------ */
@@ -836,17 +875,31 @@ footer {
   height: 400px;
 }
 
+.proyectos--foto1 {
+  grid-column: 1/5;
+}
+
+.proyectos--foto2 {
+  grid-column: 5/13;
+}
+
 #riverpark .proyectos--foto1 {
   background-image: url(/img/riverpark-detalle1.jpg);
-  grid-column: 1/5;
 }
 
 #riverpark .proyectos--foto2 {
   background-image: url(/img/riverpark-detalle2.jpg);
-  grid-column: 5/13;
 }
 
-.footer--proyectos {
+#trump .proyectos--foto1 {
+  background-image: url(/img/trump-amenities4.jpeg);
+}
+
+#trump .proyectos--foto2 {
+  background-image: url(/img/trump-detalle1.jpg);
+}
+
+.body--proyectos footer {
   background-color: var(--verde);
 }
 
