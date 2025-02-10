@@ -1,5 +1,3 @@
-"use strict";
-
 document.addEventListener("DOMContentLoaded", slider);
 
 window.addEventListener("scroll", headerColor);

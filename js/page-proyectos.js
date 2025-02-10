@@ -1,15 +1,18 @@
-"use strict";
-
 function updateHeroProyectosHeight() {
-  let vh = window.innerHeight * 0.01;
   let heroProyectos = document.querySelector(".hero--proyectos");
-  let bodyProyectos = document.querySelector(".body--proyectos");
   let caratulaFoto = document.querySelector(".caratula--foto");
   let fullHeightMinusHeader = 100 * vh - headerHeight;
-  heroProyectos.style.height = `${fullHeightMinusHeader}px`;
   heroProyectos.style.paddingTop = `${headerHeight}px`;
-  caratulaFoto.style.height = `${fullHeightMinusHeader}px`;
+  heroProyectos.style.height = `${fullHeightMinusHeader}px`;
+  console.log(`full height menos header${fullHeightMinusHeader}px`);
+  console.log(`${100 * vh}`);
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    caratulaFoto.style.height = `${fullHeightMinusHeader}px`;
+  } else {
+    caratulaFoto.style.height = `100%`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", updateHeroProyectosHeight);
-document.addEventListener("resize", updateHeroProyectosHeight);
+window.addEventListener("resize", updateHeroProyectosHeight);

@@ -461,6 +461,8 @@ button.next {
 
 .card h3 {
   padding-top: 16px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 #proyectos a:nth-child(1) .card--foto {
@@ -542,13 +544,13 @@ textarea {
 }
 
 /* input:user-valid {
-  outline-color: darkgreen;
-}
-
-input:user-invalid {
-  outline-color: crimson;
-}
-  */
+    outline-color: darkgreen;
+  }
+  
+  input:user-invalid {
+    outline-color: crimson;
+  }
+    */
 
 button {
   color: var(--blanco);
@@ -678,7 +680,7 @@ footer {
 }
 
 .ubicacion--mapa {
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
 }
 
 @media only screen and (min-width: 992px) {
@@ -708,9 +710,9 @@ footer {
 .amenities {
   padding: var(--custom-padding);
   color: var(--negro);
-  font-size: 20px;
   display: grid;
   gap: var(--custom-gap);
+  font-size: 16px;
 }
 
 .amenities--listado ul {
@@ -728,6 +730,7 @@ footer {
 
 @media only screen and (min-width: 992px) {
   .amenities {
+    font-size: 20px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
   }
@@ -752,15 +755,17 @@ footer {
     grid-column: 9/13;
   }
 
-  /* #trump .amenities--texto {
-    grid-column: 8/13;
+  #trump .amenities--texto {
+    grid-column: 1/6;
     grid-row: 2;
   }
 
   #trump .amenities--listado {
-    grid-column: 1/8;
+    grid-column: 6/13;
     grid-row: 2;
-  } */
+    /* max-height: 300px;
+      overflow-y: scroll; */
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -782,6 +787,7 @@ footer {
 
 #riverpark .amenities .amenities--foto:nth-child(2) {
   background-image: url(/img/riverpark-amenities-2.jpg);
+  background-position: 27%;
 }
 
 #riverpark .amenities .amenities--foto:nth-child(3) {
@@ -790,14 +796,17 @@ footer {
 
 #trump .amenities .amenities--foto:nth-child(1) {
   background-image: url(/img/trump-amenities1.jpg);
+  background-position: left;
 }
 
 #trump .amenities .amenities--foto:nth-child(2) {
   background-image: url(/img/trump-amenities2.jpg);
+  background-position: 35%;
 }
 
 #trump .amenities .amenities--foto:nth-child(3) {
   background-image: url(/img/trump-amenities3.jpg);
+  background-position: 95%;
 }
 
 .amenities ul {
@@ -809,6 +818,8 @@ footer {
 .separador {
   width: 100%;
   aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
 }
 
 @media only screen and (min-width: 992px) {
@@ -817,17 +828,13 @@ footer {
   }
 }
 
-.separador {
-  background-size: cover;
-  background-position: center;
-}
-
 #riverpark .separador {
   background-image: url(/img/separador-riverpark.jpg);
 }
 
 #trump .separador {
   background-image: url(/img/hero-trump.jpg);
+  background-position: center 90%;
 }
 
 /* ------------ DETALLE PROYECTOS ------------ */
@@ -837,18 +844,11 @@ footer {
   padding: 80px 40px 40px 40px;
   display: grid;
   gap: var(--custom-gap);
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
 }
 
 .proyectos--detalle p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
-}
-
-.proyectos--metros {
-  grid-column: 8/13;
-  grid-row: 1;
 }
 
 .proyectos--metros p {
@@ -856,35 +856,55 @@ footer {
   border-bottom: 1px solid var(--blanco);
 }
 
-.proyectos--descripcion {
-  grid-column: 1/8;
-  grid-row: 1;
-}
-
-.brochure {
-  grid-row: 2;
-  grid-column: 1/5;
-}
-
 .proyectos--foto1,
 .proyectos--foto2 {
-  grid-row: 3;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 400px;
 }
 
-.proyectos--foto1 {
-  grid-column: 1/5;
-}
+@media only screen and (min-width: 992px) {
+  .proyectos--detalle {
+    grid-template-columns: repeat(12, 1fr);
+  }
 
-.proyectos--foto2 {
-  grid-column: 5/13;
+  .proyectos--detalle p {
+    font-size: 20px;
+  }
+
+  .proyectos--metros {
+    grid-column: 8/13;
+    grid-row: 1;
+  }
+
+  .proyectos--descripcion {
+    grid-column: 1/7;
+    grid-row: 1;
+  }
+
+  .brochure {
+    grid-row: 2;
+    grid-column: 1/5;
+  }
+
+  .proyectos--foto1,
+  .proyectos--foto2 {
+    grid-row: 3;
+  }
+
+  .proyectos--foto1 {
+    grid-column: 1/5;
+  }
+
+  .proyectos--foto2 {
+    grid-column: 5/13;
+  }
 }
 
 #riverpark .proyectos--foto1 {
   background-image: url(/img/riverpark-detalle1.jpg);
+  background-position: 25%;
 }
 
 #riverpark .proyectos--foto2 {
@@ -893,10 +913,12 @@ footer {
 
 #trump .proyectos--foto1 {
   background-image: url(/img/trump-amenities4.jpeg);
+  background-position: 55%;
 }
 
 #trump .proyectos--foto2 {
   background-image: url(/img/trump-detalle1.jpg);
+  background-position: center bottom;
 }
 
 .body--proyectos footer {
