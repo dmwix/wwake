@@ -15,34 +15,9 @@ function updateHeroProyectosHeight() {
 document.addEventListener("DOMContentLoaded", updateHeroProyectosHeight);
 window.addEventListener("resize", updateHeroProyectosHeight);
 
-// function adjustTextSizes() {
-//   const caratula = document.querySelector(".caratula");
-//   const h1 = document.querySelector(".caratula h1");
-//   const h4 = document.querySelector(".caratula h4");
-
-//   if (!h4) return;
-
-//   let caratulaWidth = caratula.clientWidth;
-
-//   // Reset styles before measurement
-//   h1.style.fontSize = "10px";
-
-//   // Increase font size until it just fits
-//   let fontSize = 10;
-//   while (h1.offsetWidth < caratulaWidth && fontSize < 48) {
-//     fontSize += 1;
-//     h1.style.fontSize = `${fontSize}px`;
-//   }
-
-//   // Slightly reduce if it overshoots
-//   while (h1.offsetWidth > caratulaWidth && fontSize > 10) {
-//     fontSize -= 0.5;
-//     h1.style.fontSize = `${fontSize}px`;
-//   }
-
-//   // // Now match h4 to h1’s width
-//   // h4.style.fontSize = `${fontSize * 0.7}px`;
-// }
-
-// window.addEventListener("load", adjustTextSizes);
-// window.addEventListener("resize", adjustTextSizes);
+document.addEventListener("DOMContentLoaded", () => {
+  requestAnimationFrame(() => {
+    fitty(".caratula h1", { multiLine: false, observeWindow: true });
+    fitty(".caratula h4", { multiLine: false, observeWindow: true });
+  });
+});

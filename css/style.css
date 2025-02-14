@@ -612,16 +612,18 @@ footer {
   grid-template-rows: 1fr 1fr;
 }
 
+.caratula > * {
+  box-sizing: border-box;
+}
+
 .caratula {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--custom-padding);
-  /* max-width: 100%; */
   overflow: hidden;
-  box-sizing: border-box;
-  width: 80%;
+  width: 70%;
+  max-width: 100%;
 }
 
 #riverpark .logo--proyecto {
@@ -634,18 +636,11 @@ footer {
 
 .caratula h1,
 .caratula h4 {
-  width: auto;
-  display: block;
-  text-align: center;
+  display: inline-block;
   white-space: nowrap;
-  max-width: 100%;
+  text-align: center;
   box-sizing: border-box;
   overflow: hidden;
-  /* font-size: auto; */
-}
-
-.caratula h1 {
-  font-size: 8vw;
 }
 
 .caratula h4 {
@@ -655,9 +650,6 @@ footer {
   text-align: center;
   font-weight: 400;
   letter-spacing: 3px;
-  white-space: nowrap;
-  /* CHEQUEAR ESTO DE ABAJO PARA BOTÁNICA */
-  font-size: 7.2vw;
 }
 
 .caratula p {
@@ -696,14 +688,6 @@ footer {
 
   .caratula p {
     width: 80%;
-  }
-
-  .caratula h1 {
-    font-size: 2.82vw;
-  }
-
-  .caratula h4 {
-    font-size: 2.55vw;
   }
 }
 
