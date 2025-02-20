@@ -629,7 +629,7 @@ footer {
 #riverpark .logo--proyecto {
   width: 50%;
   height: 56px;
-  background-image: url(/img/riverpark-logo.avif);
+  background-image: url(/img/riverpark-logo.png);
   background-position: center;
   background-size: cover;
 }
