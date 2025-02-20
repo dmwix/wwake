@@ -391,7 +391,7 @@ button.next {
 }
 
 #nosotros--foto {
-  background-image: url(/img/nosotros.jpg);
+  background-image: url(/img/nosotros.avif);
   background-size: cover;
   background-position: center;
   height: auto;
@@ -465,15 +465,15 @@ button.next {
 }
 
 #proyectos a:nth-child(1) .card--foto {
-  background-image: url(/img/card-riverpark1.png);
+  background-image: url(/img/card-riverpark.avif);
 }
 
 #proyectos a:nth-child(2) .card--foto {
-  background-image: url(/img/card-trump.png);
+  background-image: url(/img/card-trump.avif);
 }
 
 #proyectos a:nth-child(3) .card--foto {
-  background-image: url(/img/card-botanica.jpg);
+  background-image: url(/img/card-botanica.avif);
 }
 
 @media (hover: hover) {
@@ -629,7 +629,7 @@ footer {
 #riverpark .logo--proyecto {
   width: 50%;
   height: 56px;
-  background-image: url(/img/riverpark-logo.png);
+  background-image: url(/img/riverpark-logo.avif);
   background-position: center;
   background-size: cover;
 }
@@ -662,11 +662,11 @@ footer {
 }
 
 #riverpark .caratula--foto {
-  background-image: url(/img/riverpark--caratula.jpg);
+  background-image: url(/img/riverpark-caratula.avif);
 }
 
 #trump .caratula--foto {
-  background-image: url(/img/Trump1.jpeg);
+  background-image: url(/img/trump-caratula.avif);
   background-position: center;
 }
 
@@ -788,8 +788,6 @@ footer {
   #trump .amenities--listado {
     grid-column: 6/13;
     grid-row: 2;
-    /* max-height: 300px;
-      overflow-y: scroll; */
   }
 }
 
@@ -807,30 +805,28 @@ footer {
 }
 
 #riverpark .amenities .amenities--foto:nth-child(1) {
-  background-image: url(/img/riverpark-amenities-1.jpg);
+  background-image: url(/img/riverpark-amenities-1.avif);
 }
 
 #riverpark .amenities .amenities--foto:nth-child(2) {
-  background-image: url(/img/riverpark-amenities-2.jpg);
+  background-image: url(/img/riverpark-amenities-2.avif);
   background-position: 27%;
 }
 
 #riverpark .amenities .amenities--foto:nth-child(3) {
-  background-image: url(/img/riverpark-amenities-3.jpg);
+  background-image: url(/img/riverpark-amenities-3.avif);
 }
 
 #trump .amenities .amenities--foto:nth-child(1) {
-  background-image: url(/img/trump-amenities1.jpg);
-  background-position: left;
+  background-image: url(/img/trump-amenities1.avif);
 }
 
 #trump .amenities .amenities--foto:nth-child(2) {
-  background-image: url(/img/trump-amenities2.jpg);
-  background-position: 35%;
+  background-image: url(/img/trump-amenities2.avif);
 }
 
 #trump .amenities .amenities--foto:nth-child(3) {
-  background-image: url(/img/trump-amenities3.jpg);
+  background-image: url(/img/trump-amenities3.avif);
   background-position: 95%;
 }
 
@@ -854,11 +850,11 @@ footer {
 }
 
 #riverpark .separador {
-  background-image: url(/img/separador-riverpark.jpg);
+  background-image: url(/img/separador-riverpark.avif);
 }
 
 #trump .separador {
-  background-image: url(/img/hero-trump.jpg);
+  background-image: url(/img/hero-trump.avif);
   background-position: center 90%;
 }
 
@@ -928,21 +924,21 @@ footer {
 }
 
 #riverpark .proyectos--foto1 {
-  background-image: url(/img/riverpark-detalle1.jpg);
+  background-image: url(/img/riverpark-detalle1.avif);
   background-position: 25%;
 }
 
 #riverpark .proyectos--foto2 {
-  background-image: url(/img/riverpark-detalle2.jpg);
+  background-image: url(/img/riverpark-detalle2.avif);
 }
 
 #trump .proyectos--foto1 {
-  background-image: url(/img/trump-amenities4.jpeg);
+  background-image: url(/img/trump-detalle1.avif);
   background-position: 55%;
 }
 
 #trump .proyectos--foto2 {
-  background-image: url(/img/trump-detalle1.jpg);
+  background-image: url(/img/trump-detalle2.avif);
   background-position: center bottom;
 }
 
