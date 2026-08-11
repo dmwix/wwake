@@ -464,16 +464,19 @@ button.next {
   text-align: center;
 }
 
-#proyectos a:nth-child(1) .card--foto {
-  background-image: url(/img/card-riverpark.avif);
-}
+/* la card de botanica que se ocultó
+background-image: url(/img/card-riverpark.avif); */
 
-#proyectos a:nth-child(2) .card--foto {
+#proyectos a:nth-child(1) .card--foto {
   background-image: url(/img/card-trump.avif);
 }
 
+#proyectos a:nth-child(2) .card--foto {
+  background-image: url(/img/card-botanica2.avif);
+}
+
 #proyectos a:nth-child(3) .card--foto {
-  background-image: url(/img/card-botanica.avif);
+  background-image: url(/img/card-ramblas2.avif);
 }
 
 @media (hover: hover) {
@@ -556,7 +559,9 @@ button {
   background-color: var(--grisoscuro);
   padding: 10px 24px;
   border: none;
-  transition: color 0.3s, background-color 0.3s;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
   cursor: pointer;
 }
 
