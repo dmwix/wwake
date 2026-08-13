@@ -951,6 +951,35 @@ footer {
   background-color: var(--verde);
 }
 
+.whatsapp-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: whatsapp-in 0.5s ease-out 0.7s forwards;
+  z-index: 3;
+}
+
+.whatsapp-button img {
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-button:hover img {
+  transform: scale(1.08);
+}
+@keyframes whatsapp-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
